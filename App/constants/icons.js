@@ -10,6 +10,8 @@ export const Radio = require('../assets/icons/Raido-Icon.png');
 export const Gallery = require('../assets/icons/Gallery.png');
 export const Event = require('../assets/icons/event-icon.png');
 export const Advertise = require('../assets/icons/advertise.png');
+export const Contact = require('../assets/icons/Contact.png');
+export const Competition = require('../assets/icons/Competition.png');
 
 export default {
   facebook,
@@ -24,4 +26,6 @@ export default {
   Gallery,
   Event,
   Advertise,
+  Contact,
+  Competition,
 };

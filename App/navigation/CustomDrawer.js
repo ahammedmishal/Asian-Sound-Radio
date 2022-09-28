@@ -84,7 +84,7 @@ function CustomDrawer({navigation, props}) {
           </View>
           <View style={styles.drawerItemView}>
             <Image
-              source={ICONS.facebook}
+              source={ICONS.Competition}
               resizeMode="contain"
               style={styles.drawerItemsLogo}
             />
@@ -92,7 +92,7 @@ function CustomDrawer({navigation, props}) {
           </View>
           <View style={styles.drawerItemView}>
             <Image
-              source={ICONS.facebook}
+              source={ICONS.Contact}
               resizeMode="contain"
               style={styles.drawerItemsLogo}
             />
@@ -167,20 +167,22 @@ const styles = StyleSheet.create({
     alignSelf:'center'
   },
   drawerItemsLogo: {
-    width: responsiveWidth(13),
-    height: responsiveHeight(6),
-    marginRight: responsiveWidth(3),
+    width: responsiveWidth(11),
+    height: responsiveHeight(4.2),
+    marginRight: responsiveWidth(4),
   },
   drawerItemView: {
     flexDirection: 'row',
     alignItems: 'center',
     marginLeft: responsiveWidth(5),
-    marginVertical: responsiveHeight(1),
+    marginVertical: responsiveHeight(1.3),
+    alignItems:'center'
   },
   drawerItemText: {
     color: COLORS.white,
-    fontSize: responsiveFontSize(2.3),
+    fontSize: responsiveFontSize(2.6),
     fontFamily: FONTS.h3.fontFamily,
+    marginTop:responsiveHeight(1)
   },
   socialMediaContainer: {
     marginTop: responsiveHeight(5),
