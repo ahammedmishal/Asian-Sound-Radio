@@ -2,7 +2,14 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {Dimensions, Image} from 'react-native';
 import CustomDrawer from './CustomDrawer';
 import {COLORS, FONTS, ICONS, IMAGES} from '../constants';
-import {ContactScreen, HomeScreen} from '../screens';
+import {
+  ContactScreen,
+  HomeScreen,
+  Competition,
+  Advertise,
+  FutureEvents,
+  PhotoGallery,
+} from '../screens';
 const Drawer = createDrawerNavigator();
 
 function MyDrawer() {
@@ -29,6 +36,34 @@ function MyDrawer() {
         options={{
           headerShown: false,
         }}
+        name="FutureEvents"
+        component={FutureEvents}
+      />
+      <Drawer.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="PhotoGallery"
+        component={PhotoGallery}
+      />
+      <Drawer.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="Advertise"
+        component={Advertise}
+      />
+      <Drawer.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="HomeScreen"
+        component={HomeScreen}
+      />
+      <Drawer.Screen
+        options={{
+          headerShown: false,
+        }}
         name="ContactScreen"
         component={ContactScreen}
       />
@@ -36,8 +71,8 @@ function MyDrawer() {
         options={{
           headerShown: false,
         }}
-        name="Home"
-        component={HomeScreen}
+        name="Competition"
+        component={Competition}
       />
     </Drawer.Navigator>
   );

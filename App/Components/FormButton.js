@@ -11,18 +11,18 @@ import {
 const FormField = ({placeholderText, ...rest}) => {
   return (
     <View style={styles.containerView}>
-        <LinearGradient
+      <LinearGradient
         angle={100}
         useAngle
         colors={['#00d2f2', '#d81ceb']}
         style={styles.LinearGradientStyle}>
         <TextInput
-            placeholder={placeholderText}
-            placeholderTextColor={COLORS.black}
-            underlineColorAndroid="transparent"
-            style={styles.TextInputStyleClass}
+          placeholder={placeholderText}
+          placeholderTextColor={COLORS.black}
+          underlineColorAndroid="transparent"
+          style={styles.TextInputStyleClass}
         />
-        </LinearGradient>
+      </LinearGradient>
     </View>
   );
 };
@@ -30,8 +30,10 @@ const FormField = ({placeholderText, ...rest}) => {
 export default FormField;
 
 const styles = StyleSheet.create({
-  containerView:{
-    width:responsiveWidth(100),alignItems:'center',paddingBottom:responsiveHeight(2)
+  containerView: {
+    width: responsiveWidth(100),
+    alignItems: 'center',
+    paddingBottom: responsiveHeight(2),
   },
   LinearGradientStyle: {
     height: responsiveHeight(8),
@@ -50,6 +52,6 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.h3.fontFamily,
     paddingTop: Platform.OS == 'ios' ? 0 : responsiveHeight(2),
     paddingLeft: responsiveWidth(5),
-    color: COLORS.black
+    color: COLORS.black,
   },
 });

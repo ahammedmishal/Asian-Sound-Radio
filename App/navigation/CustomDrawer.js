@@ -42,62 +42,62 @@ function CustomDrawer({navigation, props}) {
         </View>
 
         <View>
-          <View style={styles.drawerItemView}>
+          <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')} style={styles.drawerItemView}>
             <Image
               source={ICONS.Radio}
               resizeMode="contain"
               style={styles.drawerItemsLogo}
             />
             <Text style={styles.drawerItemText}>Live Radio</Text>
-          </View>
-          <View style={styles.drawerItemView}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('PhotoGallery')} style={styles.drawerItemView}>
             <Image
               source={ICONS.Gallery}
               resizeMode="contain"
               style={styles.drawerItemsLogo}
             />
             <Text style={styles.drawerItemText}>Photo Gallery</Text>
-          </View>
-          <View style={styles.drawerItemView}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('FutureEvents')} style={styles.drawerItemView}>
             <Image
               source={ICONS.Event}
               resizeMode="contain"
               style={styles.drawerItemsLogo}
             />
             <Text style={styles.drawerItemText}>Events</Text>
-          </View>
-          <View style={styles.drawerItemView}>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.drawerItemView}>
             <Image
               source={ICONS.Alarm}
               resizeMode="contain"
               style={styles.drawerItemsLogo}
             />
             <Text style={styles.drawerItemText}>Alarm</Text>
-          </View>
-          <View style={styles.drawerItemView}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Advertise')} style={styles.drawerItemView}>
             <Image
               source={ICONS.Advertise}
               resizeMode="contain"
               style={styles.drawerItemsLogo}
             />
             <Text style={styles.drawerItemText}>Advertise with us</Text>
-          </View>
-          <View style={styles.drawerItemView}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Competition')} style={styles.drawerItemView}>
             <Image
               source={ICONS.Competition}
               resizeMode="contain"
               style={styles.drawerItemsLogo}
             />
             <Text style={styles.drawerItemText}>Competition</Text>
-          </View>
-          <View style={styles.drawerItemView}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('ContactScreen')} style={styles.drawerItemView}>
             <Image
               source={ICONS.Contact}
               resizeMode="contain"
               style={styles.drawerItemsLogo}
             />
             <Text style={styles.drawerItemText}>Contact</Text>
-          </View>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.socialMediaContainer}>

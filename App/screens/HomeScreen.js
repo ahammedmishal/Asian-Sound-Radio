@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     height: responsiveHeight(12),
   },
   headerText: {
-    fontSize: responsiveFontSize(2),
+    fontSize: responsiveFontSize(2.1),
     fontFamily: FONTS.h4.fontFamily,
     color: COLORS.white,
     paddingLeft: 5,
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
   },
   drawerIconImage: {
     width: responsiveWidth(7),
-    height: responsiveHeight(2.8),
+    height: responsiveHeight(2.4),
     resizeMode: 'contain',
   },
   subHeading: {

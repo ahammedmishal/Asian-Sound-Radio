@@ -12,6 +12,10 @@ export const Event = require('../assets/icons/event-icon.png');
 export const Advertise = require('../assets/icons/advertise.png');
 export const Contact = require('../assets/icons/Contact.png');
 export const Competition = require('../assets/icons/Competition.png');
+export const Contact_Icon = require('../assets/icons/Contact-icon.png');
+export const Email = require('../assets/icons/Email.png');
+export const Location = require('../assets/icons/Location.png');
+export const Website = require('../assets/icons/Website.png');
 
 export default {
   facebook,
@@ -28,4 +32,8 @@ export default {
   Advertise,
   Contact,
   Competition,
+  Contact_Icon,
+  Email,
+  Location,
+  Website,
 };
