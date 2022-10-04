@@ -32,12 +32,19 @@ function MyDrawer() {
         headerTintColor: COLORS.white,
       }}
       drawerContent={props => <CustomDrawer {...props} />}>
-      <Drawer.Screen
+              <Drawer.Screen
         options={{
           headerShown: false,
         }}
-        name="FutureEvents"
-        component={FutureEvents}
+        name="Competition"
+        component={Competition}
+      />
+              <Drawer.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="Advertise"
+        component={Advertise}
       />
       <Drawer.Screen
         options={{
@@ -50,9 +57,10 @@ function MyDrawer() {
         options={{
           headerShown: false,
         }}
-        name="Advertise"
-        component={Advertise}
+        name="FutureEvents"
+        component={FutureEvents}
       />
+
       <Drawer.Screen
         options={{
           headerShown: false,
@@ -67,13 +75,7 @@ function MyDrawer() {
         name="ContactScreen"
         component={ContactScreen}
       />
-      <Drawer.Screen
-        options={{
-          headerShown: false,
-        }}
-        name="Competition"
-        component={Competition}
-      />
+
     </Drawer.Navigator>
   );
 }

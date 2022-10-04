@@ -7,6 +7,7 @@ import {
   Image,
   StatusBar,
   ImageBackground,
+  ScrollView,
 } from 'react-native';
 import {COLORS, FONTS, ICONS, IMAGES} from '../constants';
 import {
@@ -43,10 +44,11 @@ const PhotoGallery = ({navigation}) => {
           <Image source={IMAGES.ASIAN} style={styles.assianLogo} />
         </View>
         {/* gallery Button */}
+
       </View>
-      <View
-        style={{
-          paddingHorizontal: 20,
+      <ScrollView
+      showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
           alignItems:'center',
         }}>
         <View
@@ -54,22 +56,22 @@ const PhotoGallery = ({navigation}) => {
             flexDirection: 'row',
           }}>
           <GalleryButton
-            height={responsiveHeight(13)}
+            height={responsiveHeight(12)}
             width={responsiveWidth(30)}
           />
           <GalleryButton
-            height={responsiveHeight(13)}
+            height={responsiveHeight(12)}
             width={responsiveWidth(30)}
           />
           <GalleryButton
-            height={responsiveHeight(13)}
+            height={responsiveHeight(12)}
             width={responsiveWidth(30)}
           />
         </View>
 
         <View>
           <GalleryButton
-            height={responsiveHeight(33)}
+            height={responsiveHeight(30)}
             width={responsiveWidth(94)}
           />
         </View>
@@ -104,7 +106,7 @@ const PhotoGallery = ({navigation}) => {
             width={responsiveWidth(30)}
           />
         </View>
-      </View>
+      </ScrollView>
     </ImageBackground>
   );
 };
@@ -115,7 +117,6 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.primary,
   },
   contentContainer: {
-    width: '100%',
     paddingHorizontal: responsiveWidth(7),
   },
   headerContainer: {

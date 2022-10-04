@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Image,
   ImageBackground,
+  ScrollView,
 } from 'react-native';
 import {COLORS, FONTS, IMAGES, SIZES, ICONS} from '../constants';
 import {StatusBarHeight} from '../constants/theme';
@@ -45,7 +46,9 @@ const Advertise = ({navigation}) => {
         <Image source={IMAGES.ASIAN} style={styles.assianLogo} />
       </View>
 
-      <View style={{paddingLeft: 40}}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{paddingLeft: responsiveWidth(10)}}>
         <View>
           <Text style={styles.heading}>Contact us</Text>
           <Text style={styles.subHeading}>
@@ -53,12 +56,11 @@ const Advertise = ({navigation}) => {
             {'\n'}
             please use the following ways to contact us.
           </Text>
-          <Text style={styles.subHeading}>
-            We wil reach out to you as soon as possible.
-          </Text>
+          <Text style={styles.subHeading}>We wil reach out to you as</Text>
+          <Text style={styles.subHeading}>soon as possible.</Text>
         </View>
 
-        <View style={{flexDirection: 'row', marginTop: 20}}>
+        <View style={{flexDirection: 'row', marginTop: responsiveHeight(4)}}>
           <Image source={ICONS.Contact_Icon} style={styles.contactIcons} />
           <Text style={styles.contactText}>
             01612881000{'\n'}
@@ -67,19 +69,27 @@ const Advertise = ({navigation}) => {
           </Text>
         </View>
 
-        <View style={{flexDirection: 'row', marginTop: 20}}>
+        <View
+          style={{
+            flexDirection: 'row',
+            marginTop: responsiveHeight(2),
+            alignItems: 'center',
+          }}>
           <Image source={ICONS.Email} style={styles.contactIcons} />
-          <Text style={styles.contactText}>
-            enquiries@asiansoundradio.com
-          </Text>
+          <Text style={styles.contactText}>enquiries@asiansoundradio.com</Text>
         </View>
 
-        <View style={{flexDirection: 'row', marginTop: 20}}>
+        <View
+          style={{
+            flexDirection: 'row',
+            marginTop: responsiveHeight(3),
+            alignItems: 'center',
+          }}>
           <Image source={ICONS.Website} style={styles.contactIcons} />
           <Text style={styles.contactText}>www.asiansoundradio.com</Text>
         </View>
 
-        <View style={{flexDirection: 'row', marginTop: 20}}>
+        <View style={{flexDirection: 'row', marginTop: responsiveHeight(3.2)}}>
           <Image source={ICONS.Location} style={styles.contactIcons} />
           <Text style={styles.contactText}>
             Asian Sound Radio,{'\n'}
@@ -87,9 +97,9 @@ const Advertise = ({navigation}) => {
             42 Sounthail Street,{'\n'}
             Manchester,{'\n'}
             M3 1LG
-            </Text>
+          </Text>
         </View>
-      </View>
+      </ScrollView>
     </ImageBackground>
   );
 };
@@ -135,10 +145,10 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.h4.fontFamily,
   },
   contactIcons: {
-    width: 25,
-    height: 25,
+    width: responsiveWidth(5),
+    height: responsiveWidth(5),
     resizeMode: 'contain',
-    marginRight: 10,
+    marginRight: responsiveHeight(1),
   },
   contactText: {
     color: COLORS.white,

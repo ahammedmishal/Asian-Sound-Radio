@@ -46,24 +46,24 @@ const FutureEvents = ({navigation}) => {
         backgroundColor="rgba(0, 0, 0, 0.20)"
         translucent
       />
+
       {/* Container View */}
-      <View style={styles.contentContainer}>
-        <View style={styles.headerContainer}>
-          <TouchableOpacity
-            style={styles.headerIconConatiner}
-            onPress={() => navigation.openDrawer()}>
-            <Image source={ICONS.drawer} style={styles.drawerIconImage} />
-          </TouchableOpacity>
-          <Text style={styles.headerText}>Future Events</Text>
-        </View>
-        {/* content */}
-        <View>
-          <Text style={styles.heading}>
-            Watch this space for
-            {'\n'}
-            upcoming events...
-          </Text>
-        </View>
+      <View style={styles.headerContainer}>
+        <TouchableOpacity
+          style={styles.headerIconConatiner}
+          onPress={() => navigation.openDrawer()}>
+          <Image source={ICONS.drawer} style={styles.drawerIconImage} />
+        </TouchableOpacity>
+        <Text style={styles.headerText}>Future Events</Text>
+      </View>
+
+      {/* content */}
+      <View>
+        <Text style={styles.heading}>
+          Watch this space for
+          {'\n'}
+          upcoming events...
+        </Text>
       </View>
 
       <Curve />
@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingTop: responsiveHeight(5),
+    paddingLeft: responsiveWidth(7),
     height: responsiveHeight(12),
   },
   headerText: {

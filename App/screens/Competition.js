@@ -13,7 +13,6 @@ import {StatusBarHeight} from '../constants/theme';
 import FormField from '../Components/FormButton';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {Checkbox} from 'react-native-paper';
 
 import {
   responsiveHeight,
@@ -21,6 +20,8 @@ import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import CheckBox from '../Components/CheckBox';
+
 const Competition = ({navigation}) => {
   const [checked, setChecked] = React.useState(false);
 
@@ -46,7 +47,14 @@ const Competition = ({navigation}) => {
         <FormField placeholderText={'Competition Name'} />
         <FormField placeholderText={'Post Code'} />
 
-        <View style={{flexDirection: 'row', justifyContent: 'space-between',width:responsiveWidth(65),alignItems:'center',height:responsiveHeight(6)}}>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            width: responsiveWidth(65),
+            alignItems: 'center',
+            height: responsiveHeight(6),
+          }}>
           <Text
             style={{
               color: COLORS.white,
@@ -56,19 +64,17 @@ const Competition = ({navigation}) => {
             View T&C
           </Text>
           <View style={styles.checkboxContainer}>
-            <Checkbox
-              color={'#c42fec'}
-              uncheckedColor={'white'}
-              status={checked ? 'checked' : 'unchecked'}
-              onPress={() => {
-                setChecked(!checked);
-              }}
+            <CheckBox
+              onPress={() => setChecked(!checked)}
+              isChecked={checked}
             />
+
             <Text
               style={{
                 color: COLORS.white,
                 fontSize: responsiveFontSize(2),
                 fontFamily: FONTS.h4.fontFamily,
+                marginTop: responsiveHeight(0.5),
               }}>
               I accept T&C
             </Text>
@@ -150,7 +156,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#ff1b00',
     marginTop: responsiveHeight(2),
-    marginBottom:responsiveHeight(4)
+    marginBottom: responsiveHeight(2),
   },
   submitButtonText: {
     color: COLORS.white,
@@ -178,13 +184,10 @@ const styles = StyleSheet.create({
   },
   checkboxContainer: {
     flexDirection: 'row',
-    alignItems:'center'
+    alignItems: 'center',
   },
   checkbox: {
     alignSelf: 'center',
-  },
-  label: {
-    margin: 8,
   },
 });
 

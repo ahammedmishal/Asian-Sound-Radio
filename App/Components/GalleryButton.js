@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
   containerView: {
     paddingBottom: responsiveHeight(2),
     borderRadius:4,
-    marginHorizontal:4,
-    marginBottom:10
+    marginHorizontal:responsiveWidth(1),
+    marginBottom:responsiveHeight(1)
   },
   LinearGradientStyle: {
     borderRadius: responsiveWidth(2),
