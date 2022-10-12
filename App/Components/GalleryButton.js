@@ -7,6 +7,7 @@ import {
   responsiveFontSize,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
+import images from '../constants/images';
 
 const GalleryButton = ({height,width}) => {
   return (
@@ -16,7 +17,7 @@ const GalleryButton = ({height,width}) => {
         useAngle
         colors={['#00d2f2', '#d81ceb']}
         style={[styles.LinearGradientStyle,{height:height,width:width}]}>
-        <View style={styles.viewStyle}></View>
+        <Image style={styles.viewStyle} source={images.IMG_BACK6} />
       </LinearGradient>
     </View>
   );

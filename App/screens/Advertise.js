@@ -63,9 +63,9 @@ const Advertise = ({navigation}) => {
         <View style={{flexDirection: 'row', marginTop: responsiveHeight(4)}}>
           <Image source={ICONS.Contact_Icon} style={styles.contactIcons} />
           <Text style={styles.contactText}>
-            01612881000{'\n'}
-            01612881000{'\n'}
-            01612881000
+            0161 288 1000{'\n'}
+            0161 288 2000{'\n'}
+            0161 288 3000
           </Text>
         </View>
 

@@ -6,6 +6,8 @@ import {
   StatusBar,
   Image,
   ImageBackground,
+  Linking,
+  Alert,
 } from 'react-native';
 import {DrawerContentScrollView} from '@react-navigation/drawer';
 import {COLORS, FONTS, SIZES} from '../constants/theme';
@@ -17,9 +19,28 @@ import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 
+const sendWhatsAppMessage = () => {
+  let link = 'https://api.whatsapp.com/send?text=hello&phone=919961295539';
+  if ((link)) {
+    Linking.canOpenURL(link)
+      .then(supported => {
+        if (!supported) {
+          Alert.alert(
+            'Please install whats app to send direct message',
+          );
+        } else {
+          return Linking.openURL(link);
+        }
+      })
+      .catch(err => console.error('An error occurred', err));
+  } else {
+    console.log('sendWhatsAppMessage -----> ', 'message link is undefined');
+  }
+};
+
 function CustomDrawer({navigation, props}) {
   return (
-    <DrawerContentScrollView {...props}>
+    <DrawerContentScrollView {...props} contentContainerStyle={{flex: 1}}>
       {/* header */}
       <ImageBackground source={IMAGES.IMG_BACK3} style={{flex: 1}}>
         <StatusBar
@@ -38,90 +59,117 @@ function CustomDrawer({navigation, props}) {
         </View>
 
         <View style={{marginBottom: responsiveHeight(1.8)}}>
-          <Image source={IMAGES.ASIAN} resizeMode="contain" style={styles.logoImage} />
+          <Image
+            source={IMAGES.ASIAN}
+            resizeMode="contain"
+            style={styles.logoImage}
+          />
         </View>
 
-        <View>
-          <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')} style={styles.drawerItemView}>
-            <Image
-              source={ICONS.Radio}
-              resizeMode="contain"
-              style={styles.drawerItemsLogo}
-            />
-            <Text style={styles.drawerItemText}>Live Radio</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('PhotoGallery')} style={styles.drawerItemView}>
-            <Image
-              source={ICONS.Gallery}
-              resizeMode="contain"
-              style={styles.drawerItemsLogo}
-            />
-            <Text style={styles.drawerItemText}>Photo Gallery</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('FutureEvents')} style={styles.drawerItemView}>
-            <Image
-              source={ICONS.Event}
-              resizeMode="contain"
-              style={styles.drawerItemsLogo}
-            />
-            <Text style={styles.drawerItemText}>Events</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.drawerItemView}>
-            <Image
-              source={ICONS.Alarm}
-              resizeMode="contain"
-              style={styles.drawerItemsLogo}
-            />
-            <Text style={styles.drawerItemText}>Alarm</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Advertise')} style={styles.drawerItemView}>
-            <Image
-              source={ICONS.Advertise}
-              resizeMode="contain"
-              style={styles.drawerItemsLogo}
-            />
-            <Text style={styles.drawerItemText}>Advertise with us</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Competition')} style={styles.drawerItemView}>
-            <Image
-              source={ICONS.Competition}
-              resizeMode="contain"
-              style={styles.drawerItemsLogo}
-            />
-            <Text style={styles.drawerItemText}>Competition</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('ContactScreen')} style={styles.drawerItemView}>
-            <Image
-              source={ICONS.Contact}
-              resizeMode="contain"
-              style={styles.drawerItemsLogo}
-            />
-            <Text style={styles.drawerItemText}>Contact</Text>
-          </TouchableOpacity>
-        </View>
+        <View style={{flex: 1, justifyContent: 'space-around'}}>
+          <View>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('HomeScreen')}
+              style={styles.drawerItemView}>
+              <Image
+                source={ICONS.Radio}
+                resizeMode="contain"
+                style={styles.drawerItemsLogo}
+              />
+              <Text style={styles.drawerItemText}>Live Radio</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('PhotoGallery')}
+              style={styles.drawerItemView}>
+              <Image
+                source={ICONS.Gallery}
+                resizeMode="contain"
+                style={styles.drawerItemsLogo}
+              />
+              <Text style={styles.drawerItemText}>Photo Gallery</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('FutureEvents')}
+              style={styles.drawerItemView}>
+              <Image
+                source={ICONS.Event}
+                resizeMode="contain"
+                style={styles.drawerItemsLogo}
+              />
+              <Text style={styles.drawerItemText}>Events</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('Advertise')}
+              style={styles.drawerItemView}>
+              <Image
+                source={ICONS.Advertise}
+                resizeMode="contain"
+                style={styles.drawerItemsLogo}
+              />
+              <Text style={styles.drawerItemText}>Advertise with us</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('Competition')}
+              style={styles.drawerItemView}>
+              <Image
+                source={ICONS.Competition}
+                resizeMode="contain"
+                style={styles.drawerItemsLogo}
+              />
+              <Text style={styles.drawerItemText}>Competition</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('ContactScreen')}
+              style={styles.drawerItemView}>
+              <Image
+                source={ICONS.Contact}
+                resizeMode="contain"
+                style={styles.drawerItemsLogo}
+              />
+              <Text style={styles.drawerItemText}>Contact</Text>
+            </TouchableOpacity>
+          </View>
 
-        <View style={styles.socialMediaContainer}>
-          <View style={styles.socialMediaView}>
-            <Image
-              source={ICONS.facebook}
-              resizeMode="contain"
-              style={styles.socialIcons}
-            />
-            <Image
-              source={ICONS.whatsapp}
-              resizeMode="contain"
-              style={styles.socialIcons}
-            />
-            <Image
-              source={ICONS.twitter}
-              resizeMode="contain"
-              style={styles.socialIcons}
-            />
-            <Image
-              source={ICONS.insta}
-              resizeMode="contain"
-              style={styles.socialIcons}
-            />
+          <View style={styles.socialMediaContainer}>
+            <View style={styles.socialMediaView}>
+              <TouchableOpacity
+                onPress={() => {
+                  Linking.openURL('https://www.facebook.com/asiansoundradio');
+                }}>
+                <Image
+                  source={ICONS.facebook}
+                  resizeMode="contain"
+                  style={styles.socialIcons}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => sendWhatsAppMessage()}>
+                <Image
+                  source={ICONS.whatsapp}
+                  resizeMode="contain"
+                  style={styles.socialIcons}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  Linking.openURL('https://twitter.com/asiansoundradio');
+                }}>
+                <Image
+                  source={ICONS.twitter}
+                  resizeMode="contain"
+                  style={styles.socialIcons}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  Linking.openURL('https://www.instagram.com/asiansoundradio');
+                }}>
+                <Image
+                  source={ICONS.insta}
+                  resizeMode="contain"
+                  style={styles.socialIcons}
+                />
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </ImageBackground>
@@ -164,7 +212,7 @@ const styles = StyleSheet.create({
     width: responsiveWidth(80),
     height: responsiveHeight(8),
     marginTop: responsiveHeight(1),
-    alignSelf:'center'
+    alignSelf: 'center',
   },
   drawerItemsLogo: {
     width: responsiveWidth(11),
@@ -176,16 +224,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: responsiveWidth(5),
     marginVertical: responsiveHeight(1.3),
-    alignItems:'center'
+    alignItems: 'center',
   },
   drawerItemText: {
     color: COLORS.white,
     fontSize: responsiveFontSize(2.6),
     fontFamily: FONTS.h3.fontFamily,
-    marginTop:responsiveHeight(1)
+    marginTop: responsiveHeight(1),
   },
   socialMediaContainer: {
-    marginTop: responsiveHeight(5),
     marginHorizontal: responsiveWidth(5),
   },
   socialMediaView: {
