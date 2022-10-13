@@ -20,14 +20,12 @@ import {
 } from 'react-native-responsive-dimensions';
 
 const sendWhatsAppMessage = () => {
-  let link = 'https://api.whatsapp.com/send?text=hello&phone=919961295539';
-  if ((link)) {
+  let link = 'https://api.whatsapp.com/send?text=Hi&phone=+4407703403020';
+  if (link) {
     Linking.canOpenURL(link)
       .then(supported => {
         if (!supported) {
-          Alert.alert(
-            'Please install whats app to send direct message',
-          );
+          Alert.alert('Please install whats app to send direct message');
         } else {
           return Linking.openURL(link);
         }
@@ -40,7 +38,9 @@ const sendWhatsAppMessage = () => {
 
 function CustomDrawer({navigation, props}) {
   return (
-    <DrawerContentScrollView {...props} contentContainerStyle={{flex: 1}}>
+    <DrawerContentScrollView
+      {...props}
+      contentContainerStyle={{flex: 1, paddingTop: 0}}>
       {/* header */}
       <ImageBackground source={IMAGES.IMG_BACK3} style={{flex: 1}}>
         <StatusBar
@@ -49,6 +49,7 @@ function CustomDrawer({navigation, props}) {
           translucent
         />
 
+        {/* header */}
         <View style={styles.headerContainer}>
           <TouchableOpacity
             style={styles.headerIconConatiner}
@@ -180,18 +181,18 @@ function CustomDrawer({navigation, props}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: COLORS.primary,
   },
   headerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingLeft: responsiveWidth(4),
-    marginBottom: responsiveHeight(2),
+    paddingLeft: responsiveWidth(7),
+    height: responsiveHeight(12),
+    paddingTop: responsiveHeight(5),
   },
   headerText: {
-    fontSize: responsiveFontSize(2),
+    fontSize: responsiveFontSize(2.1),
     fontFamily: FONTS.h4.fontFamily,
     color: COLORS.white,
     paddingLeft: 5,

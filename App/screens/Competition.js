@@ -8,7 +8,7 @@ import {
   Image,
   ImageBackground,
 } from 'react-native';
-import {COLORS, FONTS, IMAGES, SIZES} from '../constants';
+import {COLORS, FONTS, ICONS, IMAGES, SIZES} from '../constants';
 import {StatusBarHeight} from '../constants/theme';
 import FormField from '../Components/FormButton';
 import LinearGradient from 'react-native-linear-gradient';
@@ -35,6 +35,15 @@ const Competition = ({navigation}) => {
         backgroundColor="rgba(0, 0, 0, 0.20)"
         translucent
       />
+        {/* header */}
+        <View style={styles.headerContainer}>
+          <TouchableOpacity
+            style={styles.headerIconConatiner}
+            onPress={() => navigation.openDrawer()}>
+            <Image source={ICONS.drawer} style={styles.drawerIconImage} />
+          </TouchableOpacity>
+          <Text style={styles.headerText}>Asian Sound Radio</Text>
+        </View>
       {/* container View */}
       <View>
         <Image source={IMAGES.ASIAN} style={styles.assianLogo} />
@@ -114,15 +123,39 @@ const Competition = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     backgroundColor: COLORS.primary,
-    paddingTop: StatusBarHeight,
   },
   assianLogo: {
     width: responsiveWidth(80),
     height: responsiveHeight(8),
     resizeMode: 'contain',
     marginVertical: responsiveHeight(2),
+    alignSelf:'center'
+  },
+  headerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingTop: responsiveHeight(5),
+    paddingLeft: responsiveWidth(7),
+    height: responsiveHeight(12),
+  },
+  headerText: {
+    fontSize: responsiveFontSize(2.1),
+    fontFamily: FONTS.h4.fontFamily,
+    color: COLORS.white,
+    paddingLeft: 5,
+  },
+  headerIconConatiner: {
+    width: responsiveWidth(10),
+    height: responsiveWidth(10),
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 8,
+  },
+  drawerIconImage: {
+    width: responsiveWidth(7),
+    height: responsiveHeight(2.4),
+    resizeMode: 'contain',
   },
   formFieldView: {
     width: '100%',
@@ -175,6 +208,7 @@ const styles = StyleSheet.create({
   },
   bottomText: {
     flex: 1,
+    alignSelf:'center',
     color: COLORS.white,
     fontSize: responsiveFontSize(2.8),
     fontWeight: 'bold',
